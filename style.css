@@ -1,0 +1,622 @@
+@font-face {
+    font-family:"med";
+    src: url(./assets/Fonts/NeueHaasDisplay-Mediu.woff2);
+}
+
+@font-face {
+    font-family: "roman";
+    src: url(./assets/Fonts/NeueHaasDisplay-Roman.woff2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+  height : 100%;
+  width : 100%;
+  font-family: "med";
+}
+
+.fixed-images{
+    height: 30vw;
+    width: 25vw;
+    left: 50%;
+    top: 18%;
+    background-color: #FE330C;
+    position: fixed;
+    z-index: 99;
+    border-radius: 5%;
+    display: none;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.page1{
+    background-color: #EFEAE3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+    width: 100%;
+    padding: 2.5vw 2vw 0vw 2vw;
+    position: relative;
+}
+
+.page1 nav{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page1 nav .buttons{
+    display: flex;
+    gap: 1vw;
+}
+
+.page1 nav a{
+    z-index: 20;
+    font-family:"roman";
+    color: #1b1918;
+    text-decoration: none;
+    border: 1px solid #c9b7b0c2;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 10px 20px;
+    font-weight:500;
+    position: relative;
+    overflow: hidden;
+}
+
+.page1 nav a:hover{
+    color: white;
+}
+
+.page1 nav a::after{
+    z-index: -10;
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+    
+}
+
+.page1 nav a:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+
+.page1 .center{
+    padding: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding:1vw 1vw 3.5vw 0vw;
+    margin: 8px;
+    border-bottom: 1px solid #c9b7b0c2;
+}
+
+.page1 .left,.right{
+    display: flex;
+    flex-direction: column;
+    font-family: "med";
+}
+
+.page1 .left{
+    font-size: 1.8vw;
+}
+
+.page1 .right{
+    font-size: 10vw;
+    align-items: flex-end;
+    line-height: 8vw;
+}
+
+.page2{
+    background-color: #EFEAE3;
+    display: flex;
+    flex-direction: column;
+    gap: 8vw;
+    width: 100%;
+    padding-top: 1vw;
+    min-height: fit-content;
+}
+
+.page2 video{
+    padding: 2vw;
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 60px;
+}
+
+.page2 .hero{
+    height: 36vw;
+    width: 46vw;
+    position: absolute;
+    right: 0;
+    top:69vh;
+}
+
+.hero1{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #FE330C;
+    border-top-left-radius:50%;
+    border-bottom-left-radius: 50%;
+    filter: blur(20px);
+}
+
+.page2 .hero2{
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    background: linear-gradient(#FE330C,#fe340ccc);
+    border-radius: 50%;
+    filter: blur(25px);
+    animation-name: anime2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.page2 .hero3{
+    position: absolute;
+    height: 30vw;
+    width: 30vw;
+    background: linear-gradient(#FE330C,#fe340ccc);
+    border-radius: 50%;
+    filter: blur(25px);
+    animation-name: anime1;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes anime1 {
+    from{
+        transform: translate(55%,-3%);
+    }
+    to{
+        transform: translate(0%,10%);
+    }
+}
+
+@keyframes anime2 {
+    from{
+        transform: translate(5%,-5%);
+    }
+    to{
+        transform: translate(-20%,30%);
+    }
+}
+
+.page2 .movingText .con h1{
+    font-size: 9vw;
+    display: inline-block;
+}
+
+
+.page2 .movingText .con .dot{
+    margin: 1vw 2vw;
+    height: 3vw;
+    width: 3vw;
+    border-radius: 50%;
+    background-color: #FE330C;
+    display: inline-block;
+}
+
+.page2 .movingText .con{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.page2 .movingText{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.page2 .movingText::-webkit-scrollbar{
+    display: none;
+}
+
+@keyframes move {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.page3{
+    background-color: #EFEAE3;
+    position: relative;
+    font-family: "roman";
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    width: 100%;
+    padding: 6vw;
+}
+
+.page3 .left span{
+    z-index: 9;
+    font-weight: 1000;
+    font-size: 76px;
+    line-height: 80px;
+}
+
+.page3 .left , .right{
+    display: flex;
+    flex-direction: column;
+}
+
+.page3 .right{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    font-family: 'roman';
+    font-size: 16px;
+    width: 18vw;
+}
+
+.page3 .right img{
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.boom{
+    position: absolute;
+    width: 35vw;
+    height: 35vw;
+    top:50%;
+    left: 27%;
+    border-radius: 50%;
+    background: linear-gradient(to top,#FE330C,#fe8d0c);
+    animation-name: boombam;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes boombam {
+    from{
+        filter: blur(20px);
+        transform: translate(10%,-10%)skew(0);
+    }
+
+    to{filter: blur(30px);
+        transform: translate(-10%,10%)skew(-10deg);
+    }
+}
+
+.page4{
+    background-color: #EFEAE3;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding-top: 1vw;
+    font-family: "roman";
+    min-height:100vh ;
+    width: 100%;
+}
+
+.page4 span div{
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    background-color: #FE330C;
+}
+
+.page4 span{
+    padding: 2vw;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.elem{
+    height: 150px;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+    overflow: hidden;
+}
+
+.elem h2{
+    font-size: 3vw;
+    z-index: 9;
+}
+
+.overlay{
+    background-color: #FF9831;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: -100%;
+    position: absolute;
+    transition: all ease 0.2s;
+    
+    
+}
+
+.elem:hover{
+    cursor: pointer;
+}
+
+.elem:hover .overlay{
+    top:0;
+}
+
+.extras{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 9;
+}
+
+.extras h3,h4{
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.extras h4{
+    color:rgba(0, 0, 0, 0.411) ;
+}
+
+.page4 a{
+    font-family: "med";
+    margin: 2vw;
+    z-index: 20;
+    font-family:"roman";
+    color: #1b1918;
+    text-decoration: none;
+    border: 1px solid #0e06035e;
+    border-radius: 50px;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight:900;
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.page4 a:hover{
+    color: white;
+}
+
+.page4 a::after{
+    z-index: -10;
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+    
+}
+
+.page4 a:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+
+.page5{
+    background-color: #EFEAE3;
+    width: 100%;
+    height: 135vh;
+    padding: 2vw;
+    padding-top: 5vw;
+}
+
+.page5 .container{
+    height: 120vh;
+    width: 100%;
+    background-color: black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.page5 .container .leftdiv{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100%;
+    color:#504A45;
+} 
+
+.page5 .container .leftdiv .contain{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.page5 .container .leftdiv .h1{
+    cursor: pointer;
+    padding-left: 3vw;
+    font-size: 4.5vh;
+    border-left: 2px solid #504A45 ;
+    font-weight: 100;
+}
+
+.page5 .container .leftdiv p{
+    width: 1000px;
+    position: absolute;
+    top: 105%;
+    font-family: "roman";
+    color: #EFEAE3;
+}
+
+.page5 .container .rightdiv{
+    width: 55%;
+    height: 100%;
+}
+
+.page5 .container .rightdiv img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page6{
+    
+    height: 60vh;
+    width: 100%;
+}
+
+.page7{
+    height: 100vh;
+    width: 100%;
+}
+
+.main{
+    position: relative;
+    z-index: 10;
+}
+
+.footer{
+    color: #EFEAE3;
+    padding: 2vw;
+    overflow: hidden;
+    position: fixed;
+    z-index: 5;
+    background-color:black;
+    height: 100vh;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.footer h1{
+    color: #EFEAE3;
+    font-size: 23vw;
+    z-index: 21;
+}
+
+.back1,.back2{
+    z-index: 20;
+    position: absolute;
+    background-color: #FE330C;
+    height: 70vw;
+    width: 80vw;
+    top: -100%;
+    filter: blur(50px);
+}
+
+.back1{
+    left: -15%;
+    animation-name: back1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+.back2{
+    right: -33%;
+    transform: rotate(35deg);
+    animation-name: back2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+
+@keyframes back1{
+    from{
+        transform: rotate(-10deg);
+    }
+    to{
+        transform: rotate(-20deg)
+    }
+}
+
+@keyframes back2{
+    from{
+        transform: rotate(-38%);
+    }
+    to{
+        transform: rotate(-28%);
+    }
+}
+
+.footer-line{
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.295);
+}
+
+.footer-bottom{
+    width: 100%;
+    height: 4vw;
+}
+
+.footer-bottom ul{
+    font-family: "roman";
+    color: #EFEAE3;
+    font-size: 1vw;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-div{
+    height: 10vw;
+    width: 100%;
+    z-index: 22;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftd{
+    font-size: 3vh;
+}
+
+.rightd{
+    display: flex;
+    flex-direction: column;
+}
